@@ -2258,10 +2258,6 @@ WHERE rn <= 2;
 
 > 🚫 **Avoid the `GROUP BY … HAVING MAX(salary)` shortcut.** Say you select a non-aggregated `employee_id` together with `GROUP BY department_id`. It returns an *arbitrary* (undefined) employee per group (and it is invalid under `ONLY_FULL_GROUP_BY`). Always use the window-function approach for top-N-per-group.
 
-```sql
-ROW_NUMBER() OVER (PARTITION BY borrower_id, document_name ORDER BY updated_on DESC) AS rn
-```
-
 ---
 
 </details>

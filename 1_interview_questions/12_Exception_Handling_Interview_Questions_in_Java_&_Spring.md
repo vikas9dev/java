@@ -747,12 +747,6 @@ public class EmployeeController {
 | Advice references `service.getEmployeeById(id)` while the service declares `getEmpById(id)` | Does not compile. Reference code that does not build is the fastest way to lose credibility in a code-reading round | Rename one side |
 | `@ResponseStatus(BAD_REQUEST)` on the method while the body object carries `NOT_FOUND` | Status line and body disagree; clients that read the body branch wrongly | Build the body from one source of truth |
 
-```java
-@ResponseStatus(HttpStatus.BAD_REQUEST)
-// ...
-return new ErrorResponse("File Type Exception", ex.getMessage(), HttpStatus.NOT_FOUND);  // ❌️ body says 404
-```
-
 <details>
 <summary><strong>🤔 Doubt: What breaks if I override a `ResponseEntityExceptionHandler` method and return a raw `Map`?</strong></summary>
 
