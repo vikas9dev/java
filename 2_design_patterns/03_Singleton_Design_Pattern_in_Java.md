@@ -1734,10 +1734,6 @@ The full decision table is in [§1 Q6](#1-interview-qa). The trade-off around re
 
 > *"In production, Singletons appear in Spring beans, database connection pool managers, configuration holders, and logger instances. For Spring beans, the default scope is singleton, and Spring manages the lifecycle."*
 
-```java
-private static HttpClient client;   // ❌️ DCL without volatile
-```
-
 <a id="3-mistakes-to-avoid"></a>
 ### 3 Mistakes to Avoid ⚡
 

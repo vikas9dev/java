@@ -1173,10 +1173,6 @@ graph TD
 6. Post-filters run on the response (add CORS headers, logging)
 7. The response goes back to the client
 
-```
-RateLimiter(3) → SessionValidation(4) → Authentication(6) → Authorization(8)
-```
-
 **Why this order matters (be ready for the follow-up):**
 
 - **Throttle first, then authenticate.** A caller who sends many requests with one token is stopped by a cheap check. The gateway does no expensive auth work for those requests.

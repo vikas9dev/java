@@ -3243,10 +3243,6 @@ public class RequestContext {
 
 💡 `InheritableThreadLocal` — a child thread gets a copy of the parent's value **when the child is created**. So it does not work with thread pools. Pool threads are created once and then reused.
 
-```java
-private static String currentUserId;   // ❌️ one slot shared by every request thread
-```
-
 ---
 
 </details>
